@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #262a2f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#imgBox {
+    width: 200px;
+    border-radius: 5px;
+
+    /* what makes the image box hidden initially */
+    max-height: 0;
+    
+    overflow: hidden;
+    transition: max-height 1s;
+}
+
+#imgBox.show-img {
+    /* what makes the image box visible when the class is added */
+  max-height: 300px;
+
+    margin: 10px auto;
+    border: 1px solid #d1d1d1;
+}
+
+/* Write code for shake animation using keyframes */
+@keyframes shake{
+    0%   { transform: translateX(0); }
+    25%  { transform: translateX(-2px); }
+    50%  { transform: translateX(0); }
+    75%  { transform: translateX(2px); }
+    100% { transform: translateX(0); }
+}
+
+
+/* Write code to shake the input box on empty input */
+.error{
+    animation:shake 0.1s ease-in-out 10;
+}
+
+
+#imgBox img {
+    width: 100%;
+    padding: 10px;
+
+}
+
+.container {
+    width: 400px;
+    padding: 25px 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border-radius: 10px;
+}
+
+.container p {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.container input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #494eea;
+    border-radius: 5px;
+    height: 50px;
+    outline: 0;
+    margin: 10px 0 20px;
+
+}
+
+.container button {
+    width: 100%;
+    font-size: 16px;
+    background: #494eea; 
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 50px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    font-weight: 500;
+}
+
+
+/* Medium screens */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .container p {
+        font-size: 14px;
+    }
+
+    .container input,
+    .container button {
+        font-size: 15px;
+        height: 45px;
+    }
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .container p {
+        font-size: 13px;
+    }
+
+    .container input {
+        font-size: 14px;
+        height: 45px;
+    }
+
+    .container button {
+        font-size: 14px;
+        height: 45px;
+    }
+
+    #imageBox {
+        width: 150px;
+    }
+}
+
+
